@@ -1,0 +1,87 @@
+from microbit import *
+import serial  # Needed to ensure communications between the RS485 soil sensor using serial communication
+
+# The healthy ranges (Minimum, Maximum) for a peace lily, taken from multiple pages to ensure accuracy and reliability.
+TEMP_MIN = 18     
+# Minimum temperature in °C
+TEMP_MAX = 27     
+# Maximum temperature in °C
+PH_MIN = 6.0      
+# Slightly acidic soil is ideal to ensure the plant thrives 
+PH_MAX = 6.5      
+# Anything above will be too basic and will need to be adjusted
+HUMIDITY_MIN = 50
+# Minimum soil moisture percentage as given by multiple sites
+HUMIDITY_MAX = 60 
+# Maximum soil moisture percentage, any higher, and the plant will suffer from high moisture levels
+
+# Display icons and messages
+# Happy face is shown when the conditions are ideal, and no changes need to be made 
+GOOD = Image.HAPPY 
+# These are the displays for when the condition is too low or high
+#Clear what the Micro: bit will display, no confusion around what is too high or too low
+#Decided against images as the device is too small to handle such images that were initially desired
+TEMP_HIGH = "Temp High"      
+TEMP_LOW = "Temp Low"       
+PH_HIGH = "pH High"          
+PH_LOW = "pH Low"           
+HUMIDITY_HIGH = "Humidity High"  
+HUMIDITY_LOW = "Humidity Low"    
+
+# Set up the serial connection to the RS-485 sensor to ensure that the voltage and scale of the prototype do not destroy the device
+# Using pin0 to send data (TX) and pin1 to receive data (RX) on the device
+uart.init(baudrate=4800, bits=8, parity=None, stop=1, tx=pin0, rx=pin1)
+
+# Setup to read the values off of the soil sensor, as a connection with the middle ground sensor (UART) has been established
+def read_sensor():
+    # This will send a Modbus query to the sensor asking for 3 values (temp, pH, humidity). 
+    uart.write(b'\x01\x03\x00\x00\x00\x03\x05\xCB')  
+    # This is a standard request format that has been discovered through research 
+    sleep(100)  # to give the sensor time to read the values 
+    response = uart.read()  # Collect and read the response 
+
+    # If there is a valid response, collect the numbers
+    if response and len(response) >= 9:
+        temp = response[3]  # Temperature value (raw byte)
+        ph = response[4] / 10.0  # Convert pH to a decimal to properly display information later(e.g., 65 → 6.5)
+        humidity = response[5]  # Humidity value (raw byte)
+        return temp, ph, humidity
+    else:
+        # If the sensor didn't respond properly, return None for all
+        return None, None, None
+
+# Main loop that runs indefinitely to ensure prototype functions as needed (this is what the customer/ user will see)
+while True:
+    # If button A is pressed, reset the reading immediately. This ensures that when the conditions of the peace lily change, the user does not need to wait 30 minutes to determine what further adjustments are needed.
+    if button_a.is_pressed():
+        display.scroll("Resetting...")
+        continue  # to skip the delay and return to the next reading. 
+
+    # Get the latest sensor readings
+    temp, ph, humidity = read_sensor()
+
+    # If any of the readings failed, show an error message; this means the device may need adjusting
+    if temp is None or ph is None or humidity is None:
+        display.scroll("Sensor Error")
+
+    # If all values are within the healthy range, show the happy face symbol 
+    elif TEMP_MIN <= temp <= TEMP_MAX and PH_MIN <= ph <= PH_MAX and HUMIDITY_MIN <= humidity <= HUMIDITY_MAX:
+        display.show(GOOD)
+
+    # If any of the values are out of range, display the previously outlined messages 
+    else:
+        if temp > TEMP_MAX:
+            display.scroll(TEMP_HIGH)
+        elif temp < TEMP_MIN:
+            display.scroll(TEMP_LOW)
+        elif ph > PH_MAX:
+            display.scroll(PH_HIGH)
+        elif ph < PH_MIN:
+            display.scroll(PH_LOW)
+        elif humidity > HUMIDITY_MAX:
+            display.scroll(HUMIDITY_HIGH)
+        elif humidity < HUMIDITY_MIN:
+            display.scroll(HUMIDITY_LOW)
+
+    # Wait 30 minutes before checking again and informing if any changes need to be done (in milliseconds for the device)
+    sleep(1800000)
