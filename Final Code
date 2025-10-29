@@ -13,6 +13,21 @@ from microbit import *
 MaxMoisture = 480 #60% of 600 value 
 MinMoisture = 300 #50% of 600 value 
 
+#create images for display, cactus for low moisture, waterdrop for high moisture
+#create cactus 
+# Create blank image microbit is 5x5, define for later reference 
+cactus = Image(5, 5)
+
+# Set pixels for cactus shape and brightness 
+for x, y in [(0,0), (0,1), (0,2), (1,2), (2,0), (2,1), (2,2), (2,3), (2,4), (3,3), (4,3), (4,2)]:
+    cactus.set_pixel(x, y, 9)
+
+#Create blank image for waterdrop 
+water_drop = Image(5, 5)
+
+# Set pixels for water drop shape
+for x, y in [(2,0), (1,1), (0,2), (0,3), (1,4), (2,4), (3,4), (4,3), (4,2), (3,1)]:
+    water_drop.set_pixel(x, y, 9)
 
 # Main program loop, this will run constantly and reset every 30 minutes
 while True:
@@ -22,10 +37,10 @@ while True:
 
     # These are the displays that will show depending on the values inputted via the soil monitor 
     if adcvalue>MaxMoisture:
-        display.show(Image.UMBRELLA)
+        display.show(water_drop)
         # If the readings are above 480 or 60% then the umbrella will be displayed 
     if adcvalue<MinMoisture:
-        display.show(Image.SKULL)
+        display.show(cactus)
         #If the readings are below 300 or 50% then the skull will be displayed 
     if adcvalue<MaxMoisture & adcvalue>MinMoisture:
         display.show(Image.HAPPY)
