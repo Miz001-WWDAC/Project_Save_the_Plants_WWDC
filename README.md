@@ -109,6 +109,8 @@ Greener Spaces Better Places. (2019). Plant Life Balance trend report 2020. http
 
 Hardware. (2025). *Microbit.org*. https://tech.microbit.org/hardware/
 
+Images — BBC micro:bit MicroPython 1.1.1 documentation. (2015). Readthedocs.io. https://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html
+
 Introduction — BBC micro:bit MicroPython 1.1.1 documentation. (2015). *Readthedocs.io*. https://microbit-micropython.readthedocs.io/en/latest/tutorials/introduction.html
 
 Linkedin.com. (2025). *Python for Students*. https://www.linkedin.com/learning/python-for-students-2023/python-for-students?u=2129308
@@ -126,8 +128,4 @@ Soltech. (2025). *Peace Lily*. https://soltech.com/products/peace-lily-care#:~:t
 Terrarium Tribe. (n.d.). Houseplant statistics. https://terrariumtribe.com/houseplant-statistics/
 
 The Sill. (n.d.). Why plant leaves turn yellow. https://www.thesill.com/blogs/care-miscellaneous/why-plant-leaves-turn-yellow
-
-
-
-
-
+‌
