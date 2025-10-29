@@ -17,15 +17,25 @@ You will find that my code has explored the moisture levels for 1 plant, known a
 ## Technologies
 
 I used multiple tools to complete this project. 
+
 1- Original version of the BBC micro:bit, or known as V1 of the micro:bit 
+
 2- Duinotech Arduino Compatible Soil Moisture Sensor Module - Also compatible with Micro:bit 
+
 Link - https://www.jaycar.com.au/duinotech-arduino-compatible-soil-moisture-sensor-module/p/XC4604 
+
 3- Jumper Leads - Alligator to Pin 
+
 Link - https://www.jaycar.com.au/10-piece-jumper-lead-set-alligator-clip-to-pin/p/WC6032
+
 4- socket to socket jumper lead 
+
 Link - https://www.jaycar.com.au/150mm-socket-to-socket-jumper-leads-40-piece/p/WC6026
+
 5- Peace Lily 
+
 6- MicroPython 
+
 Link - https://microbit-micropython.readthedocs.io/en/latest/tutorials/introduction.html
 
 ## Setup
