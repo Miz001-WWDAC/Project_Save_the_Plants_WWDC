@@ -56,7 +56,7 @@ To set up the Device and circuit in sync with the code:
     a. To do this, insert the following code and place the sensor into a glass of water (this is the total moisture level and will be taken out of the final bit of code)  
     from microbit import *
 
-while True:
+   while True:
     # Read the analog value from pin 1 (returns 0-1023)
    
     analog_value = pin1.read_analog()
