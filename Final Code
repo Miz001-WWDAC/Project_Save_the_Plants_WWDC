@@ -1,4 +1,12 @@
 from microbit import *
+#to get official reading for Min and Max Value 
+#while True: # Read the analog value from pin 1 (returns 0-1023)
+#analog_value = pin1.read_analog()
+# Display the value on the micro:bit's LED screen
+#display.show(str(analog_value))
+#sleep(100) # Wait for 100 milliseconds before reading again
+# This is to determine the total moisture level, which will read between 0-1023 as the micro:bit has a 10-bit ADC and resolution. 
+
 
 #define moisture values with the highest moisture level at 600 (based on dipping the monitor into a glass of water)
     #percentages have been taken from knowledge on peace lily, with healthy conditions being 50%-60% of the max reading. 
@@ -43,4 +51,3 @@ while True:
         # The reading will reset every 30 minutes unless button B has been pressed, in which case it will reset 30 minutes after button B was pressed
         # 30 minutes is 1800000
         sleep(1800000)
-    
