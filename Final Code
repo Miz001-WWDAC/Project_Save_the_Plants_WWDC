@@ -1,0 +1,46 @@
+from microbit import *
+
+#define moisture values with the highest moisture level at 600 (based on dipping the monitor into a glass of water)
+    #percentages have been taken from knowledge on peace lily, with healthy conditions being 50%-60% of the max reading. 
+MaxMoisture = 480 #60% of 600 value 
+MinMoisture = 300 #50% of 600 value 
+
+
+# Main program loop, this will run constantly and reset every 30 minutes
+while True:
+
+    # This sets the adcvalue to the number that gets the readings from pin 1 
+    adcvalue = pin1.read_analog()
+
+    # These are the displays that will show depending on the values inputted via the soil monitor 
+    if adcvalue>MaxMoisture:
+        display.show(Image.UMBRELLA)
+        # If the readings are above 480 or 60% then the umbrella will be displayed 
+    if adcvalue<MinMoisture:
+        display.show(Image.SKULL)
+        #If the readings are below 300 or 50% then the skull will be displayed 
+    if adcvalue<MaxMoisture & adcvalue>MinMoisture:
+        display.show(Image.HAPPY)
+        #If the readings are sitting in between the two values, then a happy face will be displayed, and no further actions will be needed.
+
+    # if the display is umbrella or skull, further action is required (like more water or to leave in the sun to dry)
+        # To get more information, the user will press button A to display the percentage value and advice.
+    # to get the actual percentage, divide adcvalue by 10.24 to get a "percentage" 
+    # When button A is pressed, the percentage value will be shown. Depending on the percentage, the user will be given the percentage and a prompt to fix the reading  
+    if button_a.was_pressed():
+        display.scroll(("{:.0%}".format(adcvalue / 1024)))
+        if adcvalue>MaxMoisture:
+            display.scroll("leave in sun")
+            #if the value is too high or the umbrella is displayed, the advice would be to leave it in the sun
+        if adcvalue<MinMoisture:
+            display.scroll("pour more water")
+            #if the value is too low or the skull is displayed, the advice would be to pour more water 
+        
+    #To have an instant reset of the values or gain further advice, button B should be pressed to reset the value 
+    if button_b.was_pressed():
+        reset()
+
+        # The reading will reset every 30 minutes unless button B has been pressed, in which case it will reset 30 minutes after button B was pressed
+        # 30 minutes is 1800000
+        sleep(1800000)
+    
