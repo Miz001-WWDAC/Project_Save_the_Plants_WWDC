@@ -61,6 +61,7 @@ while True:
         
     #To have an instant reset of the values or gain further advice, button B should be pressed to reset the value 
     if button_b.was_pressed():
+        display.scroll("resetting...")
         reset()
 
         # The reading will reset every 30 minutes unless button B has been pressed, in which case it will reset 30 minutes after button B was pressed
