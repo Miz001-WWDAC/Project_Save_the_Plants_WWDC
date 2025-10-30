@@ -94,26 +94,31 @@ All references used for this project have been listed below; most functions and 
 
 ## References
 
-
 ADC and Resolution - SPECTRUM Instrumentation. (2025). *Spectrum-Instrumentation.com*. https://spectrum-instrumentation.com/support/knowledgebase/hardware_features/ADC_and_Resolution.php
 
 Analog Read Pin. (2022). *Microsoft MakeCode*. https://makecode.microbit.org/reference/pins/analog-read-pin#:~:text=Example,number%20on%20the%20LED%20screen.&text=If%20you%20are%20using%20analog,between%20the%20two%20micro:bits.
 
 BBC micro:bit overview. (2025). *Microbit.org*. https://microbit.org/get-started/features/overview/#:~:text=The%20GND%20pin%20is%20the,switches%20to%20your%20micro:bit.
 
+Berry, D. (2011). *The philosophy of software: Code and mediation in the digital age*. Palgrave Macmillan UK.
+
+Best, O. (2025). Chapter one. *Best Friends*. O’Reilly Online Learning. https://learning.oreilly.com/library/view/code-the-hidden/9780137909261/ch01.xhtml
+
 Code. (2020). *Microsoft MakeCode*. https://makecode.microbit.org/projects/soil-moisture/code
 
 Gokhale, S. (2023, April 21). How to print a percentage value in Python? *AskPython*. https://www.askpython.com/python/examples/print-a-percentage-value-in-python
 
-Greener Spaces Better Places. (2019). Plant Life Balance trend report 2020. https://home.greenerspacesbetterplaces.com.au/wp-content/uploads/2019/12/PLBTrendReport_2020.pdf
+Greener Spaces Better Places. (2019). *Plant Life Balance trend report 2020*. https://home.greenerspacesbetterplaces.com.au/wp-content/uploads/2019/12/PLBTrendReport_2020.pdf
 
 Hardware. (2025). *Microbit.org*. https://tech.microbit.org/hardware/
 
-Images — BBC micro:bit MicroPython 1.1.1 documentation. (2015). Readthedocs.io. https://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html
+Images — BBC micro:bit MicroPython 1.1.1 documentation. (2015). *Readthedocs.io*. https://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html
 
 Introduction — BBC micro:bit MicroPython 1.1.1 documentation. (2015). *Readthedocs.io*. https://microbit-micropython.readthedocs.io/en/latest/tutorials/introduction.html
 
 Linkedin.com. (2025). *Python for Students*. https://www.linkedin.com/learning/python-for-students-2023/python-for-students?u=2129308
+
+Linkedin.com. (2025). *What is Python?* https://www.linkedin.com/learning/python-for-students-2023/what-is-python?autoSkip=true&resume=false&u=2129308
 
 Łyczywek, R. (2018, October 15). How to write a good README for your GitHub project? *Bulldogjob.com*. https://bulldogjob.com/readme/how-to-write-a-good-readme-for-your-github-project
 
@@ -125,7 +130,10 @@ Peace Lily (Spathiphyllum). (2023). *Gardenia*. https://www.gardenia.net/plant/p
 
 Soltech. (2025). *Peace Lily*. https://soltech.com/products/peace-lily-care#:~:text=The%20pH%20of%20the%20soil,lot%20of%20air%20in%20it.
 
-Terrarium Tribe. (n.d.). Houseplant statistics. https://terrariumtribe.com/houseplant-statistics/
+Terrarium Tribe. (n.d.). *Houseplant statistics*. https://terrariumtribe.com/houseplant-statistics/
 
-The Sill. (n.d.). Why plant leaves turn yellow. https://www.thesill.com/blogs/care-miscellaneous/why-plant-leaves-turn-yellow
-‌
+The. (2025). *The Official BBC Micro:bit User Guide*. O’Reilly Online Learning. https://learning.oreilly.com/library/view/the-official-bbc/9781119386735/
+
+The Sill. (n.d.). *Why plant leaves turn yellow*. https://www.thesill.com/blogs/care-miscellaneous/why-plant-leaves-turn-yellow
+
+van Dijck, J. (2014). Datafication, dataism and dataveillance: Big Data between scientific paradigm and ideology. *Surveillance & Society, 12*(2), 197–208. https://doi.org/10.24908/ss.v12i2.4776
