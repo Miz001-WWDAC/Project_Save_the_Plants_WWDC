@@ -46,7 +46,7 @@ while True:
         display.show(Image.HAPPY)
         #If the readings are sitting in between the two values, then a happy face will be displayed, and no further actions will be needed.
 
-    # if the display is umbrella or skull, further action is required (like more water or to leave in the sun to dry)
+    # if the display is waterdrop or cactus, further action is required (like more water or to leave in the sun to dry)
         # To get more information, the user will press button A to display the percentage value and advice.
     # to get the actual percentage, divide adcvalue by 10.24 to get a "percentage" 
     # When button A is pressed, the percentage value will be shown. Depending on the percentage, the user will be given the percentage and a prompt to fix the reading  
