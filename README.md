@@ -77,6 +77,11 @@ b. My reading came back as 600 for a 100% Moisture level, so 60% of 600 is 480 (
 
   3. Using the now known Min and Max values, continue with the code or adjust percentages as determined by the chosen plant.
 
+The Final Product will look like this!
+<img width="1448" height="792" alt="Screenshot 2025-10-31 at 12 29 18 pm" src="https://github.com/user-attachments/assets/67689d80-d519-4194-bb63-e2bb6e983722" />
+
+Happy Coding!
+
 ## Usage
 
 This project is used for the Houseplant owner who does not have a "Green Thumb" and consistently thinks about why the plants they purchase continue to die, or for a curious user who wants the effort taken out of when to water their plant or leave it be. 
